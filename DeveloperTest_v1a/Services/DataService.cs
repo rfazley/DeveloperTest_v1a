@@ -8,8 +8,6 @@ namespace DeveloperTest_v1a.Services
     public class DataService 
     {
 
-
-
         public async Task<IEnumerable<ExpenseClaim>> LoadData()
         {
             // Replace this line with code to load data from data.csv

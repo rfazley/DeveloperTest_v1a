@@ -15,13 +15,8 @@ namespace DeveloperTest_v1a.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-
-            //expenseClaim = new ExpenseClaim(); 
             expenseClaim = new List<ExpenseClaim>(); 
         }
-
-
-
 
 
     public void OnGet()
@@ -29,8 +24,7 @@ namespace DeveloperTest_v1a.Pages
 
             DataService dataService = new DataService();
             var data = dataService.LoadData();
-
-            List<ExpenseClaim> stuff = new List<ExpenseClaim>();
+           
             expenseClaim = data.Result.ToList<ExpenseClaim>();
         }
     }
