@@ -12,7 +12,7 @@ namespace DeveloperTest_v1a.Pages
         private readonly ICSVService _csvService;
 
         private readonly ILogger<IndexModel> _logger;
-    public List<ExpenseClaim> expenseClaim { get; set; }
+        private List<ExpenseClaim> expenseClaim { get; set; }
 
 
         public IndexModel(ILogger<IndexModel> logger, ICSVService csvService)
@@ -24,9 +24,8 @@ namespace DeveloperTest_v1a.Pages
         }
 
 
-    public void OnGet()
+        public void OnGet()
         {
-
             DataService dataService = new DataService(_csvService);
             var data = dataService.LoadData();
            
