@@ -1,0 +1,10 @@
+Please spend no longer than 2 hours on this test. You will have the opportunity to discuss where you would improve your solution given more time.
+
+1.	Unzip and open in Visual Studio 
+2.	Run the project
+3.	Instructions are at the top of the page when web page opens.
+4.	Complete test, make sure it compiles and runs 
+5.	Delete any compiled files (bin and obj folders)
+6.	Zip up and send to andy.hoyle@certero.com 
+
+Thank you.
