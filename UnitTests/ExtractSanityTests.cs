@@ -1,27 +1,32 @@
-﻿using DeveloperTest_v1a.Interfaces;
+﻿using CsvHelper;
+using DeveloperTest_v1a.Interfaces;
 using DeveloperTest_v1a.Models;
 using DeveloperTest_v1a.Services;
 using NUnit.Framework;
-using System.Security.Cryptography.X509Certificates;
+using System.Globalization;
 
 namespace UnitTests
 {
+
+    
     public class ExtractSanityTests
     {
-        private ICSVService ?_csvService;
         //arrange
-        private List<ExpenseClaim> data = new List<ExpenseClaim>(); 
-
+        private List<ExpenseClaim> data = new List<ExpenseClaim>();
+        
         [SetUp]
-        public void Setup(ICSVService csvService)
+        public void Setup()
         {
-            _csvService = csvService;
+            string filename = @"C:\temp\test\DeveloperTest_v1a_Original\DeveloperTest_v1a\data.csv";
 
-            DataService dataService = new DataService(_csvService);
-            var result = dataService.LoadData();
+            var reader = new StreamReader(filename);
+            var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
 
-            data = result.ToList<ExpenseClaim>();
+            var records = csv.GetRecords<ExpenseClaim>();
+
+            data = records.ToList<ExpenseClaim>();
         }
+
 
         [Test]
         public void TestExtractIsNotEmpty()
@@ -36,4 +41,5 @@ namespace UnitTests
         }
 
     }
+
 }
