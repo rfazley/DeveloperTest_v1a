@@ -12,7 +12,9 @@ namespace DeveloperTest_v1a.Pages
         private readonly ICSVService _csvService;
 
         private readonly ILogger<IndexModel> _logger;
-        private List<ExpenseClaim> expenseClaim { get; set; }
+
+        //accessed via the view
+        public List<ExpenseClaim> expenseClaim { get; set; }
 
 
         public IndexModel(ILogger<IndexModel> logger, ICSVService csvService)
